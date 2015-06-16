@@ -27,11 +27,12 @@ public class NotFoundFilmTest extends ru.st.selenium.pages.TestBase {
 	SearchField.clear();
     SearchField.sendKeys("abrakadabra"+Keys.RETURN);
 
+ 
 	for (int second = 0;; second++) {
     	if (second >= 60) fail("timeout");
-    	try { if ("No movies where found.".equals(driver.findElement(By.cssSelector("div.content")).getText())) break; } catch (Exception e) {}
-    	Thread.sleep(1000);
-    }
+    	try { if ("No movies where found.".equals(driver.findElement(By.cssSelector("div.content")).getText())) 
+    		break; } catch (Exception e) {}
+    	    }
 	
 
   }

@@ -12,7 +12,10 @@ import static org.hamcrest.CoreMatchers.*;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class FoundFilmTest extends ru.st.selenium.pages.TestBase {
   private boolean acceptNextAlert = true;
@@ -22,13 +25,56 @@ public class FoundFilmTest extends ru.st.selenium.pages.TestBase {
   public void FoundFilmTest() throws Exception {    
 	
     WebElement SearchField = driver.findElement(By.id("q"));
-	SearchField.clear();
-    SearchField.sendKeys("selenium"+Keys.RETURN); //в данном случае, в базе есть фильмы к ключевым словом "selenium"
     
-	WebElement FilmContainer = driver.findElement(By.id("results"));
+	
+    
+	SearchField.clear();
+    SearchField.sendKeys("selenium"+Keys.RETURN); //в данном случае, в базе есть фильмы с ключевым словом "selenium"
+    //------------------------------
+    WebElement FilmContainer = driver.findElement(By.id("results"));
 	List<WebElement> Films = FilmContainer.findElements(By.tagName("a"));
+	System.out.println("---------------");
+	for (WebElement Film : Films) {
+		System.out.println(Film.getText());
+     	
+    }
+    //--------------------------------
+    ExpectedCondition<Boolean> pageLoadFinishedCondition = new ExpectedCondition<Boolean>() {
+        public Boolean apply(WebDriver driver) 
+        {return ((JavascriptExecutor) driver).executeScript("return document.readyState").equals("complete");    }
+    };
+
+    WebDriverWait wait = new WebDriverWait(driver, 30);
+	wait.until(pageLoadFinishedCondition);	
+    
+    
+    //wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.tagName("a")));
+    //wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.tagName("a")));
+	System.out.println("---------------");
+	WebElement FilmContainer2 = driver.findElement(By.id("results"));
+	List<WebElement> Films2 = FilmContainer2.findElements(By.tagName("a"));
+	
+	for (WebElement Film : Films2) {
+		System.out.println(Film.getText());
+     	
+    }
+	
+	
 	assertNotEquals(Films.size(),0);
-	Thread.sleep(2000);
+	
+	SearchField.clear();
+    SearchField.sendKeys(Keys.RETURN); //пустое поле ввода
+    //------------------------------
+    WebElement FilmContainer1 = driver.findElement(By.id("results"));
+	List<WebElement> Films1 = FilmContainer1.findElements(By.tagName("a"));
+	System.out.println("---------------");
+	for (WebElement Film : Films1) {
+		System.out.println(Film.getText());
+     	
+    }
+    //-----------------------------
+	
+	
 	
   }
 
