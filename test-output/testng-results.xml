@@ -1,41 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="3" passed="3">
+<testng-results skipped="0" failed="1" total="3" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Tests" duration-ms="24956" started-at="2015-06-16T20:19:38Z" finished-at="2015-06-16T20:20:02Z">
+  <suite name="Tests" duration-ms="55502" started-at="2015-06-16T20:51:49Z" finished-at="2015-06-16T20:52:44Z">
     <groups>
     </groups>
-    <test name="Test1" duration-ms="24956" started-at="2015-06-16T20:19:38Z" finished-at="2015-06-16T20:20:02Z">
+    <test name="Test1" duration-ms="55502" started-at="2015-06-16T20:51:49Z" finished-at="2015-06-16T20:52:44Z">
       <class name="ru.st.selenium.LoginTest">
-        <test-method status="PASS" signature="init()[pri:0, instance:ru.st.selenium.LoginTest@6e8dacdf]" name="init" is-config="true" duration-ms="14723" started-at="2015-06-16T23:19:38Z" finished-at="2015-06-16T23:19:52Z">
+        <test-method status="PASS" signature="init()[pri:0, instance:ru.st.selenium.LoginTest@6e8dacdf]" name="init" is-config="true" duration-ms="16084" started-at="2015-06-16T23:51:49Z" finished-at="2015-06-16T23:52:05Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method status="PASS" signature="LoginTest()[pri:0, instance:ru.st.selenium.LoginTest@6e8dacdf]" name="LoginTest" duration-ms="4338" started-at="2015-06-16T23:19:52Z" finished-at="2015-06-16T23:19:57Z">
+        <test-method status="PASS" signature="LoginTest()[pri:0, instance:ru.st.selenium.LoginTest@6e8dacdf]" name="LoginTest" duration-ms="4638" started-at="2015-06-16T23:52:05Z" finished-at="2015-06-16T23:52:09Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LoginTest -->
       </class> <!-- ru.st.selenium.LoginTest -->
       <class name="ru.st.selenium.NotFoundFilmTest">
-        <test-method status="PASS" signature="init()[pri:0, instance:ru.st.selenium.NotFoundFilmTest@6b71769e]" name="init" is-config="true" duration-ms="81" started-at="2015-06-16T23:19:57Z" finished-at="2015-06-16T23:19:57Z">
+        <test-method status="PASS" signature="init()[pri:0, instance:ru.st.selenium.NotFoundFilmTest@6b71769e]" name="init" is-config="true" duration-ms="61" started-at="2015-06-16T23:52:09Z" finished-at="2015-06-16T23:52:09Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method status="PASS" signature="NotFoundFilmTest()[pri:0, instance:ru.st.selenium.NotFoundFilmTest@6b71769e]" name="NotFoundFilmTest" duration-ms="1720" started-at="2015-06-16T23:19:57Z" finished-at="2015-06-16T23:19:58Z">
+        <test-method status="PASS" signature="NotFoundFilmTest()[pri:0, instance:ru.st.selenium.NotFoundFilmTest@6b71769e]" name="NotFoundFilmTest" duration-ms="1892" started-at="2015-06-16T23:52:09Z" finished-at="2015-06-16T23:52:11Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- NotFoundFilmTest -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:ru.st.selenium.NotFoundFilmTest@6b71769e]" name="tearDown" is-config="true" duration-ms="190" started-at="2015-06-16T23:20:03Z" finished-at="2015-06-16T23:20:03Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:ru.st.selenium.NotFoundFilmTest@6b71769e]" name="tearDown" is-config="true" duration-ms="287" started-at="2015-06-16T23:52:44Z" finished-at="2015-06-16T23:52:45Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- ru.st.selenium.NotFoundFilmTest -->
       <class name="ru.st.selenium.FoundFilmTest">
-        <test-method status="PASS" signature="init()[pri:0, instance:ru.st.selenium.FoundFilmTest@1e643faf]" name="init" is-config="true" duration-ms="91" started-at="2015-06-16T23:19:58Z" finished-at="2015-06-16T23:19:58Z">
+        <test-method status="PASS" signature="init()[pri:0, instance:ru.st.selenium.FoundFilmTest@1e643faf]" name="init" is-config="true" duration-ms="91" started-at="2015-06-16T23:52:11Z" finished-at="2015-06-16T23:52:11Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method status="PASS" signature="FoundFilmTest()[pri:0, instance:ru.st.selenium.FoundFilmTest@1e643faf]" name="FoundFilmTest" duration-ms="3991" started-at="2015-06-16T23:19:58Z" finished-at="2015-06-16T23:20:02Z">
+        <test-method status="FAIL" signature="FoundFilmTest()[pri:0, instance:ru.st.selenium.FoundFilmTest@1e643faf]" name="FoundFilmTest" duration-ms="32706" started-at="2015-06-16T23:52:11Z" finished-at="2015-06-16T23:52:44Z">
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[Timed out after 30 seconds waiting for visibility of all elements located by By.tagName: a
+Build info: version: '2.45.0', revision: '5017cb8e7ca8e37638dc3091b2440b90a1d8686f', time: '2015-02-27 09:10:26'
+System info: host: 'DartlandKitchen', ip: '192.168.1.34', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_45'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=38.0.5, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 54054e9a-c217-45b6-9fc5-e58ddca7619d]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: Timed out after 30 seconds waiting for visibility of all elements located by By.tagName: a
+Build info: version: '2.45.0', revision: '5017cb8e7ca8e37638dc3091b2440b90a1d8686f', time: '2015-02-27 09:10:26'
+System info: host: 'DartlandKitchen', ip: '192.168.1.34', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_45'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=38.0.5, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 54054e9a-c217-45b6-9fc5-e58ddca7619d
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:79)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at ru.st.selenium.FoundFilmTest.FoundFilmTest(FoundFilmTest.java:44)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- FoundFilmTest -->

@@ -23,7 +23,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -37,7 +37,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Tests">
-              <span class="suite-name border-passed">Tests</span>
+              <span class="suite-name border-failed">Tests</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -90,7 +90,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">3 methods,   3 passed</span>
+                    <span class="method-stats">3 methods, 1 failed,   2 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Tests" class="hide-methods failed suite-Tests"> (hide)</a> <!-- hide-methods failed suite-Tests -->
+                      <a href="#" panel-name="suite-Tests" class="show-methods failed suite-Tests"> (show)</a> <!-- show-methods failed suite-Tests -->
+                    </span>
+                    <div class="method-list-content failed suite-Tests">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Tests" title="ru.st.selenium.FoundFilmTest" hash-for-method="FoundFilmTest">FoundFilmTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Tests -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -99,11 +113,6 @@
                       <a href="#" panel-name="suite-Tests" class="show-methods passed suite-Tests"> (show)</a> <!-- show-methods passed suite-Tests -->
                     </span>
                     <div class="method-list-content passed suite-Tests">
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Tests" title="ru.st.selenium.FoundFilmTest" hash-for-method="FoundFilmTest">FoundFilmTest</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Tests" title="ru.st.selenium.LoginTest" hash-for-method="LoginTest">LoginTest</a> <!-- method navigator-link -->
@@ -126,6 +135,56 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Tests" class="panel Tests">
+          <div class="suite-Tests-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">ru.st.selenium.FoundFilmTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="FoundFilmTest">
+                  </a> <!-- FoundFilmTest -->
+                  <span class="method-name">FoundFilmTest</span>
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Timed out after 30 seconds waiting for visibility of all elements located by By.tagName: a
+Build info: version: &apos;2.45.0&apos;, revision: &apos;5017cb8e7ca8e37638dc3091b2440b90a1d8686f&apos;, time: &apos;2015-02-27 09:10:26&apos;
+System info: host: &apos;DartlandKitchen&apos;, ip: &apos;192.168.1.34&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_45&apos;
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=38.0.5, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 54054e9a-c217-45b6-9fc5-e58ddca7619d
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:79)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at ru.st.selenium.FoundFilmTest.FoundFilmTest(FoundFilmTest.java:44)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Tests-class-failed -->
           <div class="suite-Tests-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -137,21 +196,6 @@
                   <a name="NotFoundFilmTest">
                   </a> <!-- NotFoundFilmTest -->
                   <span class="method-name">NotFoundFilmTest</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Tests-class-passed -->
-          <div class="suite-Tests-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">ru.st.selenium.FoundFilmTest</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="FoundFilmTest">
-                  </a> <!-- FoundFilmTest -->
-                  <span class="method-name">FoundFilmTest</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -228,22 +272,22 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(3);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'LoginTest')
-data.setCell(0, 2, 'ru.st.selenium.LoginTest')
-data.setCell(0, 3, 4338);
+data.setCell(0, 1, 'FoundFilmTest')
+data.setCell(0, 2, 'ru.st.selenium.FoundFilmTest')
+data.setCell(0, 3, 32706);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'FoundFilmTest')
-data.setCell(1, 2, 'ru.st.selenium.FoundFilmTest')
-data.setCell(1, 3, 3991);
+data.setCell(1, 1, 'LoginTest')
+data.setCell(1, 2, 'ru.st.selenium.LoginTest')
+data.setCell(1, 3, 4638);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'NotFoundFilmTest')
 data.setCell(2, 2, 'ru.st.selenium.NotFoundFilmTest')
-data.setCell(2, 3, 1720);
+data.setCell(2, 3, 1892);
 window.suiteTableData['Tests']= { tableData: data, tableDiv: 'times-div-Tests'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 10 seconds</span>
+              <span class="suite-total-time">Total running time: 39 seconds</span>
               <div id="times-div-Tests">
               </div> <!-- times-div-Tests -->
             </div> <!-- times-div -->
@@ -290,36 +334,38 @@ return data;
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">LoginTest</span>
-                <span class="method-start">14723 ms</span>
+                <span class="method-start">16084 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">ru.st.selenium.NotFoundFilmTest</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">init</span>
-                <span class="method-start">19061 ms</span>
+                <span class="method-start">20722 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">NotFoundFilmTest</span>
-                <span class="method-start">19142 ms</span>
+                <span class="method-start">20783 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">ru.st.selenium.FoundFilmTest</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">init</span>
-                <span class="method-start">20862 ms</span>
+                <span class="method-start">22675 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">FoundFilmTest</span>
-                <span class="method-start">20953 ms</span>
+                <span class="method-start">22766 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">ru.st.selenium.NotFoundFilmTest</div> <!-- chronological-class-name -->
               <div class="configuration-suite after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">24974 ms</span>
+                <span class="method-start">55549 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
