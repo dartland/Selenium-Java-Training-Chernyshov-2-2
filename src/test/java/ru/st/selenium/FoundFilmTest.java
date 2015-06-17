@@ -39,11 +39,10 @@ public class FoundFilmTest extends ru.st.selenium.pages.TestBase {
     WebDriverWait wait = new WebDriverWait(driver, 30);
 	wait.until(pageLoadFinishedCondition);	
     
-	WebElement FilmContainer = driver.findElement(By.id("results"));
-    //wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.tagName("a")));
-    wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.tagName("a")));
+	
 
-    
+	//wait.until(ExpectedConditions.visibilityOfAllElements(elements) 
+	WebElement FilmContainer = driver.findElement(By.id("results"));
 	List<WebElement> Films = FilmContainer.findElements(By.tagName("a"));
 	System.out.println("---------------");
 	for (WebElement Film : Films) {
