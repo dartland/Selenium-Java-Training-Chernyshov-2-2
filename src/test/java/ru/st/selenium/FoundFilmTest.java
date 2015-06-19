@@ -17,6 +17,10 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+/**
+ * @author ƒартланд
+ *
+ */
 public class FoundFilmTest extends ru.st.selenium.pages.TestBase {
   private boolean acceptNextAlert = true;
   private StringBuffer verificationErrors = new StringBuffer();
@@ -24,39 +28,37 @@ public class FoundFilmTest extends ru.st.selenium.pages.TestBase {
   @Test
   public void FoundFilmTest() throws Exception {    
 	
-    WebElement SearchField = driver.findElement(By.id("q"));
-    
 	  
-	SearchField.clear();
-    SearchField.sendKeys("selenium"+Keys.RETURN); //в данном случае, в базе есть фильмы с ключевым словом "selenium"
-    //------------------------------
-
-    ExpectedCondition<Boolean> pageLoadFinishedCondition = new ExpectedCondition<Boolean>() {
-        public Boolean apply(WebDriver driver) 
-        {return ((JavascriptExecutor) driver).executeScript("return document.readyState").equals("complete");    }
-    };
-
-    WebDriverWait wait = new WebDriverWait(driver, 30);
-	wait.until(pageLoadFinishedCondition);	
-    
-	
-
-	//wait.until(ExpectedConditions.visibilityOfAllElements(elements) 
-	WebElement FilmContainer = driver.findElement(By.id("results"));
-	List<WebElement> Films = FilmContainer.findElements(By.tagName("a"));
-	System.out.println("---------------");
-	for (WebElement Film : Films) {
-		System.out.println(Film.getText());
-     	
-    }
-    //--------------------------------
-	
-	assertNotEquals(Films.size(),0);
-	
-	
-	
-	
+      WebElement SearchField = driver.findElement(By.id("q"));
+      SearchField.clear();
+      SearchField.sendKeys(Keys.RETURN); //в каталоге в наличии все фильмы
+      //------------------------------ сохран€ем старый список фильмов
+      WebElement FilmContainerOld = driver.findElement(By.id("results"));
+      List<WebElement> FilmsOld = FilmContainerOld.findElements(By.tagName("a"));
+      SearchField.clear(); SearchField.sendKeys("selenium"+Keys.RETURN);
+      for (int count = 0;; count ++) {
+    	    if (count >= 30)
+    	        throw new TimeoutException();
+    	    try {
+    	    	driver.manage().timeouts(). implicitlyWait(0, TimeUnit.SECONDS); 
+    	    	FilmsOld.get(0).getText();
+    	        
+    	    } catch (StaleElementReferenceException e) 
+    	    	{  assertTrue("Ќе найден спиcок фильмов",isFilmListPresentAndVisible(By.tagName("a"))); break; }
+    	    Thread.sleep(1000);
+    	}
+     
   }
+  
+  
+  public boolean isFilmListPresentAndVisible(By locator) { 
+	  driver.manage().timeouts(). implicitlyWait(30, TimeUnit.SECONDS); 
+	  WebElement FilmContainer = driver.findElement(By.id("results"));
+	  List<WebElement> film = FilmContainer.findElements(locator); 
+	  if (film.size() == 0) { return false; } else { return film.get(0).isDisplayed(); }
+  }  
+  
+ 
 
   private boolean isElementPresent(By by) {
     try {

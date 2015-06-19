@@ -2,40 +2,40 @@
 <testng-results skipped="0" failed="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Tests" duration-ms="23367" started-at="2015-06-17T09:29:09Z" finished-at="2015-06-17T09:29:33Z">
+  <suite name="Tests" duration-ms="16737" started-at="2015-06-19T14:03:01Z" finished-at="2015-06-19T14:03:17Z">
     <groups>
     </groups>
-    <test name="Test1" duration-ms="23367" started-at="2015-06-17T09:29:09Z" finished-at="2015-06-17T09:29:33Z">
+    <test name="Test1" duration-ms="16737" started-at="2015-06-19T14:03:01Z" finished-at="2015-06-19T14:03:17Z">
       <class name="ru.st.selenium.LoginTest">
-        <test-method status="PASS" signature="init()[pri:0, instance:ru.st.selenium.LoginTest@6e8dacdf]" name="init" is-config="true" duration-ms="17219" started-at="2015-06-17T12:29:09Z" finished-at="2015-06-17T12:29:27Z">
+        <test-method status="PASS" signature="init()[pri:0, instance:ru.st.selenium.LoginTest@58ceff1]" name="init" is-config="true" duration-ms="10803" started-at="2015-06-19T17:03:01Z" finished-at="2015-06-19T17:03:11Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method status="PASS" signature="LoginTest()[pri:0, instance:ru.st.selenium.LoginTest@6e8dacdf]" name="LoginTest" duration-ms="4361" started-at="2015-06-17T12:29:27Z" finished-at="2015-06-17T12:29:31Z">
+        <test-method status="PASS" signature="LoginTest()[pri:0, instance:ru.st.selenium.LoginTest@58ceff1]" name="LoginTest" duration-ms="3916" started-at="2015-06-19T17:03:11Z" finished-at="2015-06-19T17:03:15Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LoginTest -->
       </class> <!-- ru.st.selenium.LoginTest -->
       <class name="ru.st.selenium.NotFoundFilmTest">
-        <test-method status="PASS" signature="init()[pri:0, instance:ru.st.selenium.NotFoundFilmTest@6b71769e]" name="init" is-config="true" duration-ms="34" started-at="2015-06-17T12:29:31Z" finished-at="2015-06-17T12:29:31Z">
+        <test-method status="PASS" signature="init()[pri:0, instance:ru.st.selenium.NotFoundFilmTest@5a39699c]" name="init" is-config="true" duration-ms="80" started-at="2015-06-19T17:03:15Z" finished-at="2015-06-19T17:03:15Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method status="PASS" signature="NotFoundFilmTest()[pri:0, instance:ru.st.selenium.NotFoundFilmTest@6b71769e]" name="NotFoundFilmTest" duration-ms="1028" started-at="2015-06-17T12:29:31Z" finished-at="2015-06-17T12:29:32Z">
+        <test-method status="PASS" signature="NotFoundFilmTest()[pri:0, instance:ru.st.selenium.NotFoundFilmTest@5a39699c]" name="NotFoundFilmTest" duration-ms="1156" started-at="2015-06-19T17:03:15Z" finished-at="2015-06-19T17:03:17Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- NotFoundFilmTest -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:ru.st.selenium.NotFoundFilmTest@6b71769e]" name="tearDown" is-config="true" duration-ms="164" started-at="2015-06-17T12:29:33Z" finished-at="2015-06-17T12:29:33Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:ru.st.selenium.NotFoundFilmTest@5a39699c]" name="tearDown" is-config="true" duration-ms="206" started-at="2015-06-19T17:03:17Z" finished-at="2015-06-19T17:03:17Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- ru.st.selenium.NotFoundFilmTest -->
       <class name="ru.st.selenium.FoundFilmTest">
-        <test-method status="PASS" signature="init()[pri:0, instance:ru.st.selenium.FoundFilmTest@1e643faf]" name="init" is-config="true" duration-ms="114" started-at="2015-06-17T12:29:32Z" finished-at="2015-06-17T12:29:32Z">
+        <test-method status="PASS" signature="init()[pri:0, instance:ru.st.selenium.FoundFilmTest@48140564]" name="init" is-config="true" duration-ms="49" started-at="2015-06-19T17:03:17Z" finished-at="2015-06-19T17:03:17Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method status="PASS" signature="FoundFilmTest()[pri:0, instance:ru.st.selenium.FoundFilmTest@1e643faf]" name="FoundFilmTest" duration-ms="568" started-at="2015-06-17T12:29:32Z" finished-at="2015-06-17T12:29:33Z">
+        <test-method status="PASS" signature="FoundFilmTest()[pri:0, instance:ru.st.selenium.FoundFilmTest@48140564]" name="FoundFilmTest" duration-ms="711" started-at="2015-06-19T17:03:17Z" finished-at="2015-06-19T17:03:17Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- FoundFilmTest -->
