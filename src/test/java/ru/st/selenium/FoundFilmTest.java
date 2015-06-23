@@ -44,20 +44,33 @@ public class FoundFilmTest extends ru.st.selenium.pages.TestBase {
     	    	FilmsOld.get(0).getText();
     	        
     	    } catch (StaleElementReferenceException e) 
-    	    	{  assertTrue("Не найден спиcок фильмов",isFilmListPresentAndVisible(By.tagName("a"))); break; }
+    	    	{  break; }
     	    Thread.sleep(1000);
-    	}
-     
+      }
+      
+      driver.manage().timeouts(). implicitlyWait(30, TimeUnit.SECONDS); 
+	  WebDriverWait wait = new WebDriverWait(driver, 30);
+	  //этот элемент тоже исчезает и появляется, ждем его появления
+	  wait.until(ExpectedConditions.presenceOfElementLocated(By.id("results")));
+	  WebElement FilmContainer = driver.findElement(By.id("results"));
+      for (int count = 0;; count ++) {
+  	    if (count >= 30) { throw new TimeoutException();}
+  	    List<WebElement> film = FilmContainer.findElements(By.tagName("a")); 
+  	    if (film.size()>0) {break;}
+  	    Thread.sleep(1000);
+  	  }
+      String NameFilm;
+      List<WebElement> film = FilmContainer.findElements(By.tagName("a")); 
+      Assert.assertNotEquals(film.size(),0); 
+      for (int i = 0; i < film.size(); i++) {
+		WebElement film_cell = film.get(i);
+		NameFilm = film_cell.findElement(By.className("title")).getText();
+		//System.out.println("Имя фильма ="+NameFilm);
+	}
   }
   
   
-  public boolean isFilmListPresentAndVisible(By locator) { 
-	  driver.manage().timeouts(). implicitlyWait(30, TimeUnit.SECONDS); 
-	  WebElement FilmContainer = driver.findElement(By.id("results"));
-	  List<WebElement> film = FilmContainer.findElements(locator); 
-	  if (film.size() == 0) { return false; } else { return film.get(0).isDisplayed(); }
-  }  
-  
+ 
  
 
   private boolean isElementPresent(By by) {
