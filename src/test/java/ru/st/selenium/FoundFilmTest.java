@@ -29,13 +29,14 @@ public class FoundFilmTest extends ru.st.selenium.pages.TestBase {
   public void FoundFilmTest() throws Exception {    
 	
 	  
+	  String SearchString = "selenium";
       WebElement SearchField = driver.findElement(By.id("q"));
       SearchField.clear();
       SearchField.sendKeys(Keys.RETURN); //в каталоге в наличии все фильмы
       //------------------------------ сохраняем старый список фильмов
       WebElement FilmContainerOld = driver.findElement(By.id("results"));
       List<WebElement> FilmsOld = FilmContainerOld.findElements(By.tagName("a"));
-      SearchField.clear(); SearchField.sendKeys("selenium"+Keys.RETURN);
+      SearchField.clear(); SearchField.sendKeys(SearchString+Keys.RETURN);
       for (int count = 0;; count ++) {
     	    if (count >= 30)
     	        throw new TimeoutException();
@@ -66,7 +67,9 @@ public class FoundFilmTest extends ru.st.selenium.pages.TestBase {
 		WebElement film_cell = film.get(i);
 		NameFilm = film_cell.findElement(By.className("title")).getText();
 		//System.out.println("Имя фильма ="+NameFilm);
-	}
+		CharSequence cs1 = SearchString;
+		Assert.assertTrue(NameFilm.toLowerCase().contains(cs1));
+	  }
   }
   
   
